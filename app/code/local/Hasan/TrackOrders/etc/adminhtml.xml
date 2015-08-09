@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <menu>
+        <sales>
+            <children>
+                <hasan_trackorders translate="title" module="hasan_trackorders">
+                    <sort_order>10</sort_order>
+                    <title>Track Orders</title>
+                    <action>adminhtml/order/</action>
+                </hasan_trackorders>
+            </children>
+        </sales>
+    </menu>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <Hasan_TrackOrders>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Hasan_TrackOrders>
+    </modules>
+</config>
