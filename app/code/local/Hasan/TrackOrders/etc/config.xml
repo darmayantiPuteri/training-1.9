@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <Hasan_TrackOrders>
+            <version>0.0.0.1</version>
+        </Hasan_TrackOrders>
+    </modules>
+ 
+    <global>
+        <models>
+            <hasan_trackorders>
+                <class>Hasan_TrackOrders_Model</class>
+                <resourceModel>hasan_trackorders_resource</resourceModel>
+            </hasan_trackorders>
+        </models>
+
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <hasan_trackorders_observer>
+                        <type>singleton</type>
+                        <class>Hasan_TrackOrders_Model_Observer</class>
+                        <method>trackLog</method>
+                    </hasan_trackorders_observer>
+                </observers>
+            </sales_order_save_after>
+        </events>
+
+
+        <hasan_trackorders_resource>
+                <class>Hasan_TrackOrders_Model_Resource</class>
+                <entities>
+                    <trackorders>
+                        <table>trackorders</table>
+                    </trackorders>
+                </entities>
+        </hasan_trackorders_resource>
+ 
+        <resources>
+            <trackorders_setup>
+                <setup>
+                    <module>Hasan_TrackOrders</module>
+                    <class>Hasan_TrackOrders_Model_Resource_Mysql4_Setup</class>
+                </setup>
+                 <connection>
+                    <use>core_setup</use>
+                </connection>
+            </trackorders_setup>
+
+            <trackorders_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </trackorders_read>
+
+            <trackorders_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </trackorders_write>
+        </resources>
+
+
+ 
+        <blocks>
+            <hasan_trackorders>
+                <class>Hasan_TrackOrders_Block</class>
+            </hasan_trackorders>
+        </blocks>
+ 
+        <helpers>
+            <hasan_trackorders>
+                <class>Hasan_TrackOrders_Helper</class>
+            </hasan_trackorders>
+        </helpers>
+    </global>
+ 
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <hasan_trackorders before="Mage_Adminhtml">Hasan_TrackOrders_Adminhtml</hasan_trackorders>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
