@@ -13,6 +13,14 @@
                 <class>Hasan_TrackOrders_Model</class>
                 <resourceModel>hasan_trackorders_resource</resourceModel>
             </hasan_trackorders>
+            <hasan_trackorders_resource>
+                <class>Hasan_TrackOrders_Model_Resource</class>
+                <entities>
+                    <trackorders>
+                        <table>trackorders</table>
+                    </trackorders>
+                </entities>
+            </hasan_trackorders_resource>
         </models>
 
         <events>
@@ -26,16 +34,6 @@
                 </observers>
             </sales_order_save_after>
         </events>
-
-
-        <hasan_trackorders_resource>
-                <class>Hasan_TrackOrders_Model_Resource</class>
-                <entities>
-                    <trackorders>
-                        <table>trackorders</table>
-                    </trackorders>
-                </entities>
-        </hasan_trackorders_resource>
  
         <resources>
             <trackorders_setup>
@@ -60,8 +58,6 @@
                 </connection>
             </trackorders_write>
         </resources>
-
-
  
         <blocks>
             <hasan_trackorders>
